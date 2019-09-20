@@ -1,5 +1,7 @@
 const express = require('express');
 const handlebar = require('express-handlebars');
+const controls = require('./models/burger.js');
+
 
 const app = express();
 const PORT = process.env.PORT || 1337;
@@ -10,7 +12,9 @@ app.use(express.json());
 app.engine("handlebars", handlebar({ defaultLayout: "main" })); //set up handlebars
 app.set("view engine", "handlebars");
 
+app.get('/',(request,response)=>{
 
+})
 
 
 
