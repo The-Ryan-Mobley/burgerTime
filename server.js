@@ -12,6 +12,8 @@ app.use(express.json());
 app.engine("handlebars", handlebar({ defaultLayout: "main" })); //set up handlebars
 app.set("view engine", "handlebars");
 
+
+require('./controllers/burgers_controller.js')(app);
 app.get('/',(request,response)=>{
 
 })
