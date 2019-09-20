@@ -1,4 +1,4 @@
-import sql from 'mysql';
+const sql = require(sql);
 require('dotenv').config();
 connection = sql.createConnection({
     host     : 'localhost',

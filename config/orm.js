@@ -1,4 +1,4 @@
-import connection from './connection.js';
+const connection = require('./connection.js');
 module.exports = {
     selectAll: ()=>{
         connection.query(`SELECT * FROM BURGERS`,(ERR,queryArray)=>{
