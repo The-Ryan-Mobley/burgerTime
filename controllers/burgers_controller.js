@@ -17,14 +17,18 @@ const path = require('path');
 const app = express();
 
 module.exports = (app)=>{
-    app.get('/',(request,responsePage)=>{
-        responsePage.render('index');
+/***** */
+    app.get('/',(request,responsePage)=>{ //going to do a select query likely 2 arrays one for devoured burgers and non
+        responsePage.render('index');     //initializes page
 
 
     });
-    app.get('/add/:name',(request,response)=>{
+    app.get('/add/:name',(QueryRequest,response)=>{ //adds burger then updates page
 
-    })
+    });
+    app.get('/eat/:name',(queryRequest,responsePage)=>{ //updates eaten status then redisplays probably just an api
+
+    });
 /***********************************************css routes**************************************************************/
     app.get("/style.css", (req, res)=> {
         res.sendFile(path.join(__dirname, "../public/assets/css/burger_style.css"));

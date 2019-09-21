@@ -1,1 +1,17 @@
-<h1>hello world</h1>
+<div class='container'>
+    <div class='row'>
+        <div class="twelve columns">
+            <ul>
+                {{#each burger}}
+                <li>
+                    <p>
+                        {{this.id}}. {{this.burger_name}}
+
+                        <button burger-id="{{this.id}}" class="devour-burger">Devour-it!</button>
+                    </p>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+</div>
