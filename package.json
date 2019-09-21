@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/The-Ryan-Mobley/burgerTime#readme",
   "dependencies": {
+    "dotenv": "^8.1.0",
     "env": "0.0.2",
     "express": "^4.17.1",
     "express-handlebars": "^3.1.0",

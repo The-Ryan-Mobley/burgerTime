@@ -1,3 +1,15 @@
+/*
+****************************************************pathing guide*****************************************************
+        orm------------.(you are here)
+(holds sql quieries)    \
+                    burger.js---------.
+                (takes data and appl-) \
+                (-ies orm functgions )  *----burger_controller----------.
+                                        (handles routing and handlebars) \
+                                                                          *---server
+                                                                          (host server and calls controller)
+**********************************************************************************************************************
+*/
 const connection = require('./connection.js');
 module.exports = {
     selectAll: ()=>{

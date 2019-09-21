@@ -1,3 +1,16 @@
+/*
+****************************************************pathing guide*****************************************************
+        orm------------.
+(holds sql quieries)    \
+                    burger.js---------.
+                (takes data and appl-) \
+                (-ies orm functgions )  *----burger_controller----------.
+                                        (handles routing and handlebars) \
+                                                                          *---server(you are here)
+                                                                          (host server and calls controller)
+**********************************************************************************************************************
+*/
+
 const express = require('express');
 const handlebar = require('express-handlebars');
 const controls = require('./models/burger.js');
