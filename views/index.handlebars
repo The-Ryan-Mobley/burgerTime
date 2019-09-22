@@ -4,6 +4,7 @@
             <div id='Burger-menu'>
                 <ul>
                     {{#each burger}}
+                    {{#unless eaten}}
 
                     <li>
                         <p>
@@ -13,11 +14,12 @@
                             <button burger-id="{{this.id}}" class="devour-burger">Devour-it!</button>
                         </p>
                     </li>
+                    {{/unless}}
                     {{/each}}
                 </ul>
             </div>
         </div>
-        {{!-- <div class="six columns">
+        <div class="six columns">
             <div id='Burger-bin'>
                 <ul>
                     {{#each burger}}
@@ -30,10 +32,11 @@
                             <button burger-id="{{this.id}}" class="devour-burger">Devour-it!</button>
                         </p>
                     </li>
+                    {{/if}}
                     {{/each}}
                 </ul>
             </div>
-        </div> --}}
+        </div>
     </div>
     <div class='row'>
 

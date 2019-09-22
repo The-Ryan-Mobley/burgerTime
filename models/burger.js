@@ -14,6 +14,16 @@ const orm = require('../config/orm.js');
 module.exports = {
     allBurgers: (callback)=>{
         orm.selectAll('burgers',(result)=>{
+            // let returnArr = [];
+            // result.forEach(i=>{
+            //     if(i.eaten === 0){
+            //         i.eaten = false;
+            //     }
+            //     else{
+            //         i.eaten = true;
+            //     }
+            //     returnArr.push(i);
+            // });
             callback(result);
 
         });

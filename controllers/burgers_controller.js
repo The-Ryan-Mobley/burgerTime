@@ -18,13 +18,22 @@ const app = express();
 
 module.exports = (app)=>{
 /***** */
-    app.get('/burger',(request,responsePage)=>{ //going to do a select query likely 2 arrays one for devoured burgers and non
+    app.get('/',(request,responsePage)=>{ //going to do a select query likely 2 arrays one for devoured burgers and non
         burger.allBurgers((burgerResponse)=>{
             console.log(burgerResponse);
             responsePage.render('index',{burger: burgerResponse}); 
         });
             //initializes page
         //reloadpage
+
+
+    });
+    app.get('/burger',(request,responsePage)=>{ //possibly need for repeat select queries
+        burger.allBurgers((burgerResponse)=>{
+            console.log(burgerResponse);
+            responsePage.render('index',{burger: burgerResponse}); 
+        });
+           
 
 
     });
