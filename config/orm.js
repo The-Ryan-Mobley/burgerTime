@@ -30,7 +30,7 @@ module.exports = {
             callback(response);
             
         })
-        //will inser tinto table
+        //will insert into table
 
     },
     updateOne: (table,updateCol,flag,conditionCol,name,callback)=>{ //eat
@@ -47,7 +47,8 @@ module.exports = {
         connection.query(sqlString,[table,condition,val],(er,result)=>{
             if(er) throw er;
             callback(response); 
-        })
+        });
+        //delete row from table
 
     }
 }

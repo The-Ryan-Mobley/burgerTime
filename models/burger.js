@@ -29,6 +29,12 @@ module.exports = {
         orm.updateOne('burgers','eaten',true,'burger_name',name,(result)=>{
             callback(result);
         });
+    },
+    deleteBurger: (id,callback)=>{
+        orm.deleteOne('burgers','id',id,(result)=>{
+            callback(result);
+        })
     }
+
 }
 //call orm functions

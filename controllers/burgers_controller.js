@@ -35,13 +35,19 @@ module.exports = (app)=>{
         });
 
     });
-    app.put('/eat/:name',(queryRequest,responsePage)=>{ //updates eaten status then redisplays probably just an api
+    app.put('/burger/:name',(queryRequest,responsePage)=>{ //updates eaten status then redisplays probably just an api
         let burgerName = queryRequest.params.name.toLower();
         burger.eatBurger(burgerName,(result)=>{
 
         });
 
     });
+    app.delete('/burger/delete/:id',(request,response)=>{
+        let delId = request.params.id;
+        burger.deleteBurger(delId,(result)=>{
+
+        });
+    })
 /***********************************************css routes**************************************************************/
     app.get("/style.css", (req, res)=> {
         res.sendFile(path.join(__dirname, "../public/assets/css/burger_style.css"));
