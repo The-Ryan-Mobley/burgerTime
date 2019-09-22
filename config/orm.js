@@ -41,5 +41,13 @@ module.exports = {
 
         });
         //will update table
+    },
+    deleteOne: (table,condition,val,callback)=>{
+        let sqlString=`DELETE FROM ?? WHERE ?? = ?`;
+        connection.query(sqlString,[table,condition,val],(er,result)=>{
+            if(er) throw er;
+            callback(response); 
+        })
+
     }
 }

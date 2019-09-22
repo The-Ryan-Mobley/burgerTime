@@ -35,9 +35,11 @@ module.exports = (app)=>{
         });
 
     });
-    app.get('/eat/:name',(queryRequest,responsePage)=>{ //updates eaten status then redisplays probably just an api
+    app.put('/eat/:name',(queryRequest,responsePage)=>{ //updates eaten status then redisplays probably just an api
         let burgerName = queryRequest.params.name.toLower();
-        burger.eatBurger(burgerName);
+        burger.eatBurger(burgerName,(result)=>{
+
+        });
 
     });
 /***********************************************css routes**************************************************************/
