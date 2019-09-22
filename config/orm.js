@@ -22,9 +22,11 @@ module.exports = {
         })
         //will grab all data from DB
     },
-    insertOne: (name)=>{
-        connection.query(`INSERT INTO burgers (burger_name,eaten) VALUES (?,?)`,[name,false],(er,response)=>{
+    insertOne: (table,colValue,secondColValue,name,flag,callback)=>{
+        let sqlString =`INSERT INTO ?? (??,??) VALUES (?,?)`;
+        connection.query(sqlString,[table,colValue,secondColValue,name,flag],(er,response)=>{
             if(er) throw er;
+            callback(response);
             
         })
         //will inser tinto table

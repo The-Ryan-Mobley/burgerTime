@@ -19,8 +19,11 @@ module.exports = {
         });
         
     },
-    addBurger: (name)=>{
-        orm.insertOne(name);
+    addBurger: (name,callback)=>{
+        orm.insertOne('burgers','burger_name','eaten',name,'false',(result)=>{
+            callback(result);
+
+        });
     },
     eatBurger: (name)=>{
         orm.updateOne(name);

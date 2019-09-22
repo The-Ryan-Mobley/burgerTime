@@ -30,7 +30,9 @@ module.exports = (app)=>{
     });
     app.get('/add/:name',(QueryRequest,response)=>{ //adds burger then updates page
         let burgerName =  QueryRequest.body.name.toLower();
-        burger.insertOne(burgerName);
+        burger.insertOne(burgerName,(result)=>{
+            
+        });
 
     });
     app.get('/eat/:name',(queryRequest,responsePage)=>{ //updates eaten status then redisplays probably just an api
