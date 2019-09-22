@@ -1,8 +1,8 @@
 /*
 ****************************************************pathing guide*****************************************************
         orm------------.
-(holds sql quieries)    \
-                    burger.js---------.(you are here)
+(holds sql quieries)    \ (you are here)
+                    burger.js---------.
                 (takes data and appl-) \
                 (-ies orm functgions )  *----burger_controller----------.
                                         (handles routing and handlebars) \
@@ -20,13 +20,15 @@ module.exports = {
         
     },
     addBurger: (name,callback)=>{
-        orm.insertOne('burgers','burger_name','eaten',name,'false',(result)=>{
+        orm.insertOne('burgers','burger_name','eaten',name,false,(result)=>{
             callback(result);
 
         });
     },
-    eatBurger: (name)=>{
-        orm.updateOne(name);
+    eatBurger: (name,callback)=>{
+        orm.updateOne('burgers','eaten',true,'burger_name',name,(result)=>{
+            callback(result);
+        });
     }
 }
 //call orm functions

@@ -1,6 +1,7 @@
 /*
 ****************************************************pathing guide*****************************************************
-        orm------------.(you are here)
+   (you are here) 
+        orm------------.
 (holds sql quieries)    \
                     burger.js---------.
                 (takes data and appl-) \
@@ -32,9 +33,11 @@ module.exports = {
         //will inser tinto table
 
     },
-    updateOne: (name)=>{
-        connection.query(`UPDATE burgers SET eaten=? WHERE burger_name=?`,[name,true],(er,response)=>{
+    updateOne: (table,updateCol,flag,conditionCol,name,callback)=>{ //eat
+        let sqlString=`UPDATE ?? SET ?? = ? WHERE ?? = ?`;
+        connection.query(sqlString,[table,updateCol,flag,conditionCol,name,],(er,response)=>{
             if(er) throw er;
+            callback(response);
 
         });
         //will update table

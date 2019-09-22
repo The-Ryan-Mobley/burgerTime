@@ -3,8 +3,8 @@
         orm------------.
 (holds sql quieries)    \
                     burger.js---------.
-                (takes data and appl-) \
-                (-ies orm functgions )  *----burger_controller----------.(you are here)
+                (takes data and appl-) \       (you are here)
+                (-ies orm functgions )  *----burger_controller----------.
                                         (handles routing and handlebars) \
                                         /                                 *---server
     handlebar templates----------------*                                   (host server and calls controller)
@@ -18,7 +18,7 @@ const app = express();
 
 module.exports = (app)=>{
 /***** */
-    app.get('/',(request,responsePage)=>{ //going to do a select query likely 2 arrays one for devoured burgers and non
+    app.get('/burger',(request,responsePage)=>{ //going to do a select query likely 2 arrays one for devoured burgers and non
         burger.allBurgers((burgerResponse)=>{
             console.log(burgerResponse);
             responsePage.render('index',{burger: burgerResponse}); 
@@ -28,15 +28,15 @@ module.exports = (app)=>{
 
 
     });
-    app.get('/add/:name',(QueryRequest,response)=>{ //adds burger then updates page
-        let burgerName =  QueryRequest.body.name.toLower();
+    app.post('/burger/:name',(QueryRequest,response)=>{ //adds burger then updates page
+        let burgerName =  QueryRequest.params.name.toLower();
         burger.insertOne(burgerName,(result)=>{
-            
+
         });
 
     });
     app.get('/eat/:name',(queryRequest,responsePage)=>{ //updates eaten status then redisplays probably just an api
-        let burgerName = queryRequest.body.name.toLower();
+        let burgerName = queryRequest.params.name.toLower();
         burger.eatBurger(burgerName);
 
     });
