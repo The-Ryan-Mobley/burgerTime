@@ -6,8 +6,8 @@
                 (takes data and appl-) \
                 (-ies orm functgions )  *----burger_controller----------.
                                         (handles routing and handlebars) \
-                                                                          *---server(you are here)
-                                                                          (host server and calls controller)
+                                        /                                 *---server(you are here)
+    handlebar templates----------------*                                   (host server and calls controller)
 **********************************************************************************************************************
 */
 
@@ -27,9 +27,7 @@ app.set("view engine", "handlebars");
 
 
 require('./controllers/burgers_controller.js')(app);
-app.get('/',(request,response)=>{
 
-})
 
 
 

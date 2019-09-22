@@ -6,12 +6,24 @@
                 (takes data and appl-) \
                 (-ies orm functgions )  *----burger_controller----------.
                                         (handles routing and handlebars) \
-                                                                          *---server
-                                                                          (host server and calls controller)
+                                        /                                 *---server
+    handlebar templates----------------*                                   (host server and calls controller)
 **********************************************************************************************************************
 */
 const orm = require('../config/orm.js');
 module.exports = {
-    
+    allBurgers: (callback)=>{
+        orm.selectAll('burgers',(result)=>{
+            callback(result);
+
+        });
+        
+    },
+    addBurger: (name)=>{
+        orm.insertOne(name);
+    },
+    eatBurger: (name)=>{
+        orm.updateOne(name);
+    }
 }
 //call orm functions

@@ -6,15 +6,19 @@
                 (takes data and appl-) \
                 (-ies orm functgions )  *----burger_controller----------.
                                         (handles routing and handlebars) \
-                                                                          *---server
-                                                                          (host server and calls controller)
+                                        /                                  *---server
+    handlebar templates----------------*                                   (host server and calls controller)
 **********************************************************************************************************************
 */
+//object relational map
 const connection = require('./connection.js');
 module.exports = {
-    selectAll: ()=>{
-        connection.query(`SELECT * FROM burgers`,(ERR,queryArray)=>{
+    selectAll: (table,callback)=>{
+        let sqlstring =`SELECT * FROM ??`;
+
+        connection.query(sqlstring,table,(ERR,queryArray)=>{
             if(ERR) throw ERR;
+            callback(queryArray);
         })
         //will grab all data from DB
     },
