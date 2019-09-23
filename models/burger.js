@@ -35,8 +35,8 @@ module.exports = {
 
         });
     },
-    eatBurger: (name,callback)=>{
-        orm.updateOne('burgers','eaten',true,'burger_name',name,(result)=>{
+    eatBurger: (id,callback)=>{
+        orm.updateOne('burgers','eaten',true,'id',id,(result)=>{
             callback(result);
         });
     },

@@ -44,9 +44,15 @@ module.exports = (app)=>{
         });
 
     });
-    app.put('/burger/:name',(queryRequest,responsePage)=>{ //updates eaten status then redisplays probably just an api
-        let burgerName = queryRequest.params.name.toLower();
-        burger.eatBurger(burgerName,(result)=>{
+    app.put('/burger/',(queryRequest,responsePage)=>{ //updates eaten status then redisplays probably just an api
+        let burgerId = queryRequest.body.burgId;
+        burger.eatBurger(burgerId,(result)=>{
+            if (result.changedRows == 0) {
+                // If no rows were changed, then the ID must not exist, so 404
+                return responsePage.status(404).end();
+              } else {
+                responsePage.status(200).end();
+              }
 
         });
 
