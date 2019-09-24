@@ -18,21 +18,14 @@ const app = express();
 
 module.exports = (app)=>{
 /************************************************html routes************************************************************/
-    app.get('/',(request,responsePage)=>{ //going to do a select query likely 2 arrays one for devoured burgers and non
-        burger.allBurgers((burgerResponse)=>{
-            console.log(burgerResponse);
-            responsePage.render('index',{burger: burgerResponse}); 
-        });
+    app.get('/',(request,responsePage)=>{ //going to do a select query likely 2 arrays one for devoured burgers and non    
+        responsePage.render('index'); 
             //initializes page
         //reloadpage
 
-
     });
     app.get('/newBurger',(request,responsePage)=>{ //going to do a select query likely 2 arrays one for devoured burgers and non
-        burger.allBurgers((burgerResponse)=>{
-            console.log(burgerResponse);
-            responsePage.render('newForm'); 
-        });
+        responsePage.render('newForm'); 
             //initializes page
         //reloadpage
 
@@ -40,8 +33,7 @@ module.exports = (app)=>{
     });
     app.get('/burger',(request,responsePage)=>{ //possibly need for repeat select queries
         burger.allBurgers((burgerResponse)=>{
-            console.log(burgerResponse);
-            responsePage.render('index',{burger: burgerResponse}); 
+            return responsePage.json(burgerResponse); 
         });
            
 

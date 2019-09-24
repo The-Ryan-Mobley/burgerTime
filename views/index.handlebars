@@ -1,39 +1,14 @@
 <div class='container'>
-    <div class='row'>
+    <div class='row burger-container'>
         <div class="six columns">
             <div id='Burger-menu'>
-                <ul>
-                    {{#each burger}}
-                    {{#unless eaten}}
-
-                    <li class='slider'>
-                        <p>
-
-                            {{this.id}}. {{this.burger_name}}
-
-                            <button data-id="{{this.id}}" data-state="{{this.eaten}}" class="devour-burger">Devour-it!</button>
-                        </p>
-                    </li>
-                    {{/unless}}
-                    {{/each}}
-                </ul>
+                
             </div>
         </div>
         <div class="six columns">
             <div id='Burger-bin'>
                 <ul>
-                    {{#each burger}}
-                    {{#if eaten}}
-                    <li class='slider'>
-                        <p>
-
-                            {{this.id}}. {{this.burger_name}}
-
-                            <button data-id="{{this.id}}" data-state="{{this.eaten}}" class="devour-burger">Cook-it!</button>
-                        </p>
-                    </li>
-                    {{/if}}
-                    {{/each}}
+                    
                 </ul>
             </div>
         </div>

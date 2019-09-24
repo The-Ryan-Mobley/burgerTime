@@ -1,7 +1,9 @@
 //location.assign("/"); reloads
 $(window).on('load', () => {
-    console.log('js linked');
-    $(`.devour-burger`).on('click', (event)=> {
+    listTheBurgers();
+    
+    $(`.burger-container`).on('click','.devour-burger',(event)=> {
+        console.log('click');
         
         let id = $(event.target).data('id');
         
@@ -16,8 +18,15 @@ $(window).on('load', () => {
             data: burgerId
         }).then(() => {
             console.log("NOM NOM");
-            location.reload();
+            
+            if(state === 0){
+                $(`#${id}`).data('state',1);
+                $(`#${id}`).detach().appendTo('#Burger-bin');
+            }else{
+                $(`#${id}`).data('state',0);
+                $(`#${id}`).detach().appendTo('#Burger-menu');
 
+            }
         });
 
     });
@@ -81,6 +90,39 @@ $(window).on('load', () => {
 
         let newBurgerName = toppings.join(" ") + " " + mainBurger.join(" ");
         return newBurgerName;
+    }
+    function listTheBurgers(){
+        $.ajax('/burger',{
+            type:'GET'
+        }).then((data)=>{
+            console.log(data);
+            let counter =0;
+            appendTheBurgers(data,counter);
+        });
+    }
+    function appendTheBurgers(data,counter){
+        let burger = data[counter];
+        let liString =``;
+        if(burger.eaten === 0){
+            liString = `<li class ="slider" id=${burger.id}>`;
+            liString+=` <p> #${burger.id} - ${burger.burger_name}`;
+            liString+=`<button data-id="${burger.id}" data-state="${burger.eaten}" class="devour-burger">Devour-it!</button></p></li>`
+            $(liString).appendTo('#Burger-menu');
+        }
+        else{
+            liString = `<li class ="slider" id=${burger.id}>`;
+            liString+=` <p> #${burger.id} - ${burger.burger_name}`;
+            liString+=`<button data-id="${burger.id}" data-state="${burger.eaten}" class="devour-burger">CookIt</button></p></li>`
+            $(liString).appendTo('#Burger-bin');
+        }
+
+        counter++;
+        setTimeout(() => {
+            if (counter < data.length) {
+                appendTheBurgers(data,counter);
+            }
+    
+        },300);
     }
 
 });
