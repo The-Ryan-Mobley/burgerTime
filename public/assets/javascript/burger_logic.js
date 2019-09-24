@@ -35,8 +35,16 @@ $(window).on('load', () => {
        makeToppings(topID);
        
     });
-    $('#submit-burger').on('submit',(event)=>{
-        event.preventDefault();
+    $('#submit-burger').on('click',(event)=>{
+        let newBurg = grabToppings();
+        let burgerObj = {name: newBurg};
+        $.ajax('/burger',{
+            type: 'POST',
+            data: burgerObj
+        }).then(()=>{
+            window.location.href='/';
+
+        });
         //take values from form and make butger string
     });
     $('#go-back').on('click',(event)=>{
@@ -47,12 +55,12 @@ $(window).on('load', () => {
         if(topID < 6){ //5 is enough
             topID++;
             let toppingString=`<select class="u-full-width ingredient slider" id="topping-${topID}">`;
-            toppingString+=`<option value="Option 1">Pickles</option>`;
-            toppingString+=`<option value="Option 2">Onions</option>`;
-            toppingString+=`<option value="Option 3">Red Onions</option>`;
-            toppingString+=`<option value="Option 4">Peppers</option>`;
-            toppingString+=`<option value="Option 5">Mushrooms</option>`
-            toppingString+=`<option value="Option 6">Avocado</option>`;
+            toppingString+=`<option value="Pickle">Pickles</option>`;
+            toppingString+=`<option value="Onion">Onions</option>`;
+            toppingString+=`<option value="Red Onion">Red Onions</option>`;
+            toppingString+=`<option value="Pepper">Peppers</option>`;
+            toppingString+=`<option value="Mushroom">Mushrooms</option>`
+            toppingString+=`<option value="Avocado">Avocado</option>`;
             toppingString+=`</select>`;
             $(toppingString).appendTo('#topping-list');
             $(`#more-toppings`).data('topcount',topID);
@@ -61,6 +69,18 @@ $(window).on('load', () => {
                let errorText=$('<p class="err">Max topping reached!(5)</p>');
                errorText.appendTo('#topping-list');
            }
+    }
+    function grabToppings(){
+        let toppings = $('.ingredient :selected').map(function() {
+            return this.value;
+        }).get();
+
+        let mainBurger = $('.the-meats :selected').map(function(){
+            return this.value;
+        }).get();
+
+        let newBurgerName = toppings.join(" ") + " " + mainBurger.join(" ");
+        return newBurgerName;
     }
 
 });

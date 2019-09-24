@@ -47,9 +47,10 @@ module.exports = (app)=>{
 
 
     });
-    app.post('/burger/:name',(QueryRequest,response)=>{ //adds burger then updates page
-        let burgerName =  QueryRequest.params.name.toLower();
-        burger.insertOne(burgerName,(result)=>{
+    app.post('/burger',(QueryRequest,response)=>{ //adds burger then updates page
+        let burgerName =  QueryRequest.body.name;
+        burger.addBurger(burgerName,(result)=>{
+            response.json(result);
 
         });
 
