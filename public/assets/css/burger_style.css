@@ -6,7 +6,29 @@
 
 .slider{
     
- animation: slide-up 0.4s ease;
+    animation: slide-up 0.4s ease;
+}
+.main-content{
+    margin-bottom:5%;
+    height:45em;
+
+}
+.burger-option{
+    border-style:solid;
+    border-width:1%;
+    border-color:red;
+}
+.container{
+    
+}
+footer{
+    margin-top:5%;
+    position: absolute;
+    /* bottom: 0; */
+    width: 100%;
+    padding: 1%;
+    color: white;
+    background-color: red;
 }
 
 @keyframes slide-up {
