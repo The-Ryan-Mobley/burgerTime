@@ -35,8 +35,15 @@ module.exports = {
 
         });
     },
-    eatBurger: (id,callback)=>{
-        orm.updateOne('burgers','eaten',true,'id',id,(result)=>{
+    eatBurger: (id,state,callback)=>{
+        let flagParam = undefined;
+        if(parseInt(state) === 0){
+            flagParam = 1;
+        }else{
+            flagParam = 0;
+        }
+
+        orm.updateOne('burgers','eaten',flagParam,'id',id,(result)=>{
             callback(result);
         });
     },

@@ -17,11 +17,21 @@ const path = require('path');
 const app = express();
 
 module.exports = (app)=>{
-/***** */
+/************************************************html routes************************************************************/
     app.get('/',(request,responsePage)=>{ //going to do a select query likely 2 arrays one for devoured burgers and non
         burger.allBurgers((burgerResponse)=>{
             console.log(burgerResponse);
             responsePage.render('index',{burger: burgerResponse}); 
+        });
+            //initializes page
+        //reloadpage
+
+
+    });
+    app.get('/newBurger',(request,responsePage)=>{ //going to do a select query likely 2 arrays one for devoured burgers and non
+        burger.allBurgers((burgerResponse)=>{
+            console.log(burgerResponse);
+            responsePage.render('newForm'); 
         });
             //initializes page
         //reloadpage
@@ -44,10 +54,11 @@ module.exports = (app)=>{
         });
 
     });
-    app.put('/burger/',(queryRequest,responsePage)=>{ //updates eaten status then redisplays probably just an api
-        let burgerId = queryRequest.body.burgId;
-        burger.eatBurger(burgerId,(result)=>{
-            if (result.changedRows == 0) {
+    app.put('/burger',(queryRequest,responsePage)=>{ //updates eaten status then redisplays probably just an api
+        let burgerId = queryRequest.body.burgId; //abreviated burg to avoid confusing chains of burger = burger.burger
+        let burgerState = queryRequest.body.burgState;
+        burger.eatBurger(burgerId,burgerState,(result)=>{
+            if (result.changedRows === 0) {
                 // If no rows were changed, then the ID must not exist, so 404
                 return responsePage.status(404).end();
               } else {

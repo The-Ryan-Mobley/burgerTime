@@ -6,7 +6,7 @@
                     {{#each burger}}
                     {{#unless eaten}}
 
-                    <li>
+                    <li class='slider'>
                         <p>
 
                             {{this.id}}. {{this.burger_name}}
@@ -24,7 +24,7 @@
                 <ul>
                     {{#each burger}}
                     {{#if eaten}}
-                    <li>
+                    <li class='slider'>
                         <p>
 
                             {{this.id}}. {{this.burger_name}}
