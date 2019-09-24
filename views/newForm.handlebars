@@ -1,0 +1,39 @@
+<div class='container'>
+    <form>
+        <div class="row">
+            
+            <div class="six columns">
+                <label for="pattys">How many patties?</label>
+                <select class="u-full-width" id="pattys">
+                    <option value="Option 1">Single</option>
+                    <option value="Option 2">Double</option>
+                    <option value="Option 3">Triple</option>
+                    <option value="Option 4">Mega</option>
+                    <option value="Option 5">Double Mega</option>
+                    
+                </select>
+                <label for="cheese">What Kind of Cheese?</label>
+                <select class="u-full-width" id="cheese">
+                    <option value="Option 1">Burger</option>
+                    <option value="Option 2">Cheese Burger</option>
+                    <option value="Option 3">Extra Cheesey Burger</option>
+                </select>
+
+                
+            </div>
+            <div class='six columns' id='topping-list'>
+                <label for="ingredient">Select Toppings</label>
+                <select class="u-full-width" class="ingredient" id='topping-0'>
+                    <option value="Option 1">Pickles</option>
+                    <option value="Option 2">Onions</option>
+                    <option value="Option 3">Red Onions</option>
+                    <option value="Option 4">Peppers</option>
+                    <option value="Option 5">Mushrooms</option>
+                    <option value="Option 6">Avocado</option>
+                </select>
+            </div>
+        </div>
+        <input class="button-primary" id='more-toppings' type="button" value="&#43" data-topCount='0'>
+        <input class="button-primary" id='submit-burger' type="submit" value="Submit">
+    </form>
+</div>
