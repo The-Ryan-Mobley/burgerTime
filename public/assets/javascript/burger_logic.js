@@ -19,11 +19,11 @@ $(window).on('load', () => {
             if(state === 0){                
                 $(`#${id}`).detach().appendTo('#Burger-bin');
                 $(`#button-${id}`).data('state',1);
-                $(`#button-${id}`).html('Cook It!');
+                $(`#button-${id}`).text('Cook It!');
             }else{ 
                 $(`#${id}`).detach().appendTo('#Burger-menu');
                 $(`#button-${id}`).data('state',0);
-                $(`#button-${id}`).html('Devour It!');
+                $(`#button-${id}`).text('Devour It!');
             }
         });
     });
@@ -109,9 +109,15 @@ $(window).on('load', () => {
         },100);
     }
     function listString(burger,location){
+        let buttonText = '';
+        if(burger.eaten === 0){
+            buttonText = 'Devour It!';
+        }else{
+            buttonText = 'Cook It!';
+        }
         liString = `<li class ="slider burger-option" id="${burger.id}">`;
         liString+=` <p> #${burger.id} - ${burger.burger_name}`;
-        liString+=`<button data-id="${burger.id}" id="button-${burger.id}" data-state="${burger.eaten}" class="devour-burger">Devour-it!</button></p></li>`
+        liString+=`<button data-id="${burger.id}" id="button-${burger.id}" data-state="${burger.eaten}" class="devour-burger">${buttonText}</button></p></li>`
         $(liString).appendTo(location);
 
     }
