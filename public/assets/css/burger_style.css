@@ -115,7 +115,7 @@ footer{
     border-top-color:#FFDC9F;
     margin-top:5%;
     position: absolute;
-    /* bottom: 0; */
+    bottom: 0;
     width: 100%;
     padding: 1%;
     color: white;
