@@ -58,6 +58,7 @@ $(window).on('load', () => {
             toppingString+=`<option value="Pepper">Peppers</option>`;
             toppingString+=`<option value="Mushroom">Mushrooms</option>`
             toppingString+=`<option value="Avocado">Avocado</option>`;
+            toppingString+=`<option value="Bacon">Bacon</option>`;
             toppingString+=`</select>`;
             $(toppingString).appendTo('#topping-list');
             $(`#more-toppings`).data('topcount',topID);
