@@ -82,5 +82,12 @@ module.exports = (app)=>{
         resultPath.sendFile(path.join(__dirname,'../public/assets/javascript/burger_logic.js'));
 
     });
+    app.get('/burger_logo',(request,response)=>{
+        response.sendFile(path.join(__dirname,'../public/assets/img/download.png'));
+    })
+    app.get('/burger_icon',(request,response)=>{
+        response.sendFile(path.join(__dirname,'../public/assets/img/PinClipart.com_burger-clip-art_1101617.png'));
+
+    });
 
 };

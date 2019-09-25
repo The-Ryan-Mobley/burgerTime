@@ -4,11 +4,18 @@
     max-width:100%;
     
 }
+p{
+    
+    font-weight: bold;
+    font-size:1.2em;
+    color:#000;
+}
 .err{
     font-weight: bold;
     color:red;
 }
 body{
+    max-width:100%;
     overflow-x: hidden;
     background-color: #63462d;
 }
@@ -23,9 +30,23 @@ body{
 .slider{
     
     animation: slide-up 0.4s ease;
+    
+   
+}
+#new-burger{
+    border-color: #000;
+    background-color:#ac3f37;
+    color: #FFFFFF;
+}
+.devour-burger{
+    border-color: #000;
+    color:#FFFFFF;
+    background-color:#8F7B69;
+    display: block;
+    margin:1%;
 }
 header{
-    
+    overflow-x: hidden;
     text-align: justify;
     font-weight: bold;
     width:100%;
@@ -45,18 +66,24 @@ header{
     margin-bottom:5%;
     height:100%;
     background-color: #63462d;
-    text-shadow:-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000,1px 1px 0 #000;
+    /* text-shadow:-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000,1px 1px 0 #000; */
 
 }
 .burger-option{
+    
+    background-color: #fcd863;
+    border-radius: 1.5em;
     border-style:solid;
     border-width:1%;
-    border-color:red;
+    border-color: #e7c555;
+    text-align: justify;
+    
 }
 .container{
     
 }
 footer{
+    overflow-x: hidden;
     border-top-style: ridge;
     border-top-width: 1%;
     border-top-color:#FFDC9F;
@@ -81,3 +108,17 @@ footer{
         transform: translateY(0);
     }
 }
+/* Larger than mobile */
+@media (min-width: 400px) {}
+
+/* Larger than phablet */
+@media (min-width: 550px) {}
+
+/* Larger than tablet */
+@media (min-width: 750px) {}
+
+/* Larger than desktop */
+@media (min-width: 1000px) {}
+
+/* Larger than Desktop HD */
+@media (min-width: 1200px) {}
