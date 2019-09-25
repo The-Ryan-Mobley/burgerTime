@@ -1,5 +1,5 @@
-USE burgers_db;
-TRUNCATE burgers_db.burgers;
-INSERT INTO burgers_db.burgers (burger_name,eaten)
+USE f0jujnhilnhwvda2;
+TRUNCATE f0jujnhilnhwvda2.burgers;
+INSERT INTO f0jujnhilnhwvda2.burgers (burger_name,eaten)
 VALUES ('Cheese Burger',false),('Bacon Cheese Burger',false),('Double Cheese Burger',false),
 ('Bacon Bleu Burger',false);
