@@ -26,6 +26,15 @@ body{
     text-align: center;
     
 }
+.pics{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width:8em;
+    height:6em;
+    max-width:8em;
+    max-height:auto;
+}
 
 .slider{
     
@@ -33,6 +42,7 @@ body{
     
    
 }
+
 #new-burger{
     border-color: #000;
     background-color:#ac3f37;

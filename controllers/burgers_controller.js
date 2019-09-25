@@ -89,5 +89,8 @@ module.exports = (app)=>{
         response.sendFile(path.join(__dirname,'../public/assets/img/PinClipart.com_burger-clip-art_1101617.png'));
 
     });
+    app.get('/burger_plate',(request,response)=>{
+        response.sendFile(path.join(__dirname,'../public/assets/img/kissclipart-cartoon-picture-of-a-dish-clipart-dish-clip-art-a741357b2802dcef.png'))
+    })
 
 };
