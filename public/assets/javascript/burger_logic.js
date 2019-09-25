@@ -19,9 +19,11 @@ $(window).on('load', () => {
             if(state === 0){                
                 $(`#${id}`).detach().appendTo('#Burger-bin');
                 $(`#button-${id}`).data('state',1);
+                $(`#button-${id}`).html('Cook It!');
             }else{ 
                 $(`#${id}`).detach().appendTo('#Burger-menu');
                 $(`#button-${id}`).data('state',0);
+                $(`#button-${id}`).html('Devour It!');
             }
         });
     });
