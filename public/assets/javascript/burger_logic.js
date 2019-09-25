@@ -16,19 +16,12 @@ $(window).on('load', () => {
             type: 'PUT',
             data: burgerId
         }).then(() => {
-            console.log(burgerId);
-            if(state === 0){
-                console.log('line 21');
-                
+            if(state === 0){                
                 $(`#${id}`).detach().appendTo('#Burger-bin');
                 $(`#button-${id}`).data('state',1);
-                console.log( $(`#${id}`).data('state'));
-            }else{
-                
-                
+            }else{ 
                 $(`#${id}`).detach().appendTo('#Burger-menu');
                 $(`#button-${id}`).data('state',0);
-                console.log( $(`#${id}`).data('state'));
             }
         });
     });

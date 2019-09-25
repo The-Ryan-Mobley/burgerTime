@@ -1,16 +1,51 @@
+*{
+    font-family: 'Courier New', Courier, monospace;
+    color:#FFFFFF;
+    max-width:100%;
+    
+}
 .err{
     font-weight: bold;
     color:red;
 }
-
+body{
+    overflow-x: hidden;
+    background-color: #63462d;
+}
+.body-title{
+    text-shadow:-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000,1px 1px 0 #000;
+    font-weight: bold;
+    display: block;
+    text-align: center;
+    
+}
 
 .slider{
     
     animation: slide-up 0.4s ease;
 }
+header{
+    
+    text-align: justify;
+    font-weight: bold;
+    width:100%;
+    margin-bottom: 5%;
+    background-color:#FFDC9F;
+    text-shadow:-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000,1px 1px 0 #000;
+    border-bottom-style: groove;
+    border-bottom-width:1%;
+    border-color:#ED7459;
+}
+.head-title{
+    font-family: 'Righteous', cursive;
+    font-size:6em;
+
+}
 .main-content{
     margin-bottom:5%;
-    height:45em;
+    height:100%;
+    background-color: #63462d;
+    text-shadow:-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000,1px 1px 0 #000;
 
 }
 .burger-option{
@@ -22,13 +57,17 @@
     
 }
 footer{
+    border-top-style: ridge;
+    border-top-width: 1%;
+    border-top-color:#FFDC9F;
     margin-top:5%;
     position: absolute;
     /* bottom: 0; */
     width: 100%;
     padding: 1%;
     color: white;
-    background-color: red;
+    background-color: #ED7459;
+    
 }
 
 @keyframes slide-up {
