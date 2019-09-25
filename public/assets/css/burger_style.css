@@ -199,7 +199,7 @@ h3{
 }
 
 /* Larger than tablet */
-@media (min-width: 750px) and (min-width: 1000px) {
+@media (min-width: 750px) and (max-width: 1000px) {
     
     header{
         width:100%;
