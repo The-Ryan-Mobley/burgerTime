@@ -116,7 +116,7 @@ $(window).on('load', () => {
             buttonText = 'Cook It!';
         }
         liString = `<li class ="slider burger-option" id="${burger.id}">`;
-        liString+=` <p> #${burger.id} - ${burger.burger_name}`;
+        liString+=` <p style="white-space:normal"> #${burger.id} - ${burger.burger_name}`; //style to avoid eplise text cut off
         liString+=`<button data-id="${burger.id}" id="button-${burger.id}" data-state="${burger.eaten}" class="devour-burger">${buttonText}</button></p></li>`
         $(liString).appendTo(location);
 
