@@ -10,7 +10,7 @@ $(window).on('load', () => {
             burgId: id,
             burgState: state
         }
-        console.log(burgerId);
+        
         //makes a put call
         $.ajax('/burger',{
             type: 'PUT',
@@ -34,7 +34,6 @@ $(window).on('load', () => {
     $('#more-toppings').on('click',function(event){ //this code is janky but it works
                                                     //es5 function so i can use this because the syntax of calling itself
         let topID = $(this).data('topcount');       //looked wierd. the selects can be read with .map during collection
-        console.log(topID);                         
         makeToppings(topID);
     });
     $('#submit-burger').on('click',(event)=>{
@@ -86,7 +85,6 @@ $(window).on('load', () => {
         $.ajax('/burger',{
             type:'GET'
         }).then((data)=>{
-            console.log(data);
             let counter =0;
             appendTheBurgers(data,counter);
         });
