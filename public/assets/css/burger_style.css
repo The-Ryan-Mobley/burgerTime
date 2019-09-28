@@ -91,7 +91,7 @@ header{
 
 }
 .burger-option{
-    
+    white-space: normal;
     background-color: #fcd863;
     border-radius: 1.5em;
     border-style:solid;
