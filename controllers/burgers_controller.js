@@ -18,13 +18,13 @@ const app = express();
 
 module.exports = (app)=>{
 /************************************************html routes************************************************************/
-    app.get('/',(request,responsePage)=>{ //going to do a select query likely 2 arrays one for devoured burgers and non    
+    app.get('/',(request,responsePage)=>{ 
         responsePage.render('index'); 
             //initializes page
         //reloadpage
 
     });
-    app.get('/newBurger',(request,responsePage)=>{ //going to do a select query likely 2 arrays one for devoured burgers and non
+    app.get('/newBurger',(request,responsePage)=>{ 
         responsePage.render('newForm'); 
             //initializes page
         //reloadpage
@@ -66,7 +66,7 @@ module.exports = (app)=>{
         burger.deleteBurger(delId,(result)=>{
 
         });
-    })
+    });
 /***********************************************css routes**************************************************************/
     app.get("/style.css", (req, res)=> {
         res.sendFile(path.join(__dirname, "../public/assets/css/burger_style.css"));
@@ -91,6 +91,6 @@ module.exports = (app)=>{
     });
     app.get('/burger_plate',(request,response)=>{
         response.sendFile(path.join(__dirname,'../public/assets/img/kissclipart-cartoon-picture-of-a-dish-clipart-dish-clip-art-a741357b2802dcef.png'))
-    })
+    });
 
 };
